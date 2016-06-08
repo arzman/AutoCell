@@ -9,25 +9,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 
-import org.omg.CORBA._PolicyStub;
-
-import javax.swing.JComboBox;
-import javax.swing.JCheckBox;
-import javax.swing.JLabel;
-
 public class AutoCellFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton _initButton;
 	private JPanel _graphPanel;
 
 	private final int GRAPH_FACTOR = 5;
 	private JButton _btnSuivant;
-	private JComboBox _cellSimuCombo;
+	private JComboBox<String> _cellSimuCombo;
 	private JTextField _pasFiled;
 
 	private JButton _runThreadButton;
@@ -56,6 +56,12 @@ public class AutoCellFrame extends JFrame {
 		graphicGroup.setLayout(gbl_graphicGroup);
 
 		_graphPanel = new JPanel() {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -4123549056673725994L;
+
 
 			@Override
 			public void paint(Graphics g) {
@@ -112,7 +118,7 @@ public class AutoCellFrame extends JFrame {
 		gbc_initPanel.gridy = 0;
 		controlPanel.add(initPanel, gbc_initPanel);
 
-		_cellSimuCombo = new JComboBox();
+		_cellSimuCombo = new JComboBox<String>();
 		initPanel.add(_cellSimuCombo);
 
 		_initButton = new JButton("Initialise");
